@@ -3,19 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Level;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class LevelController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $levels = Level::all();
+        $users = User::all();
 
-        return response()->json($levels);
+        return response()->json($users);
     }
 
     /**
@@ -31,18 +31,7 @@ class LevelController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'nivel' => 'required|string|max:255',
-        ]);
-
-        $level = Level::create([
-            'nivel' => $validatedData['nivel'],
-        ]);
-
-        return response()->json([
-            'message' => 'Level criado com sucesso!',
-            'level' => $level,
-        ], 201);
+        //
     }
 
     /**
