@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('level_id');
             $table->foreign('level_id')->references('id')->on('levels')->onDelete('cascade');
             $table->string('nome', 100);
-            $table->char('sexo');
+            $table->char('sexo', 1);
             $table->date('data_nascimento');
             $table->string('hobby', 100);
             $table->timestamps();

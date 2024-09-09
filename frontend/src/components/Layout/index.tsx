@@ -3,6 +3,8 @@ import logo from "../../../public/logo.png"
 import { FaUsersGear } from "react-icons/fa6";
 import { FaBriefcase, FaSignOutAlt } from "react-icons/fa";
 import { ReactNode } from "react";
+import { ThemeProvider } from "./theme-provider";
+import { Toaster } from "../ui/sonner";
 
 interface IProps {
     children: ReactNode
@@ -46,8 +48,9 @@ export const Layout = (props: IProps) => {
                         </ul>
                     </div>
                 </header>
-                <main>
+                <main className="max-h-screen overflow-scroll">
                     {props.children}
+                    <Toaster className="dark" />
                 </main>
             </div>
         </>

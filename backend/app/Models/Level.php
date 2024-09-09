@@ -10,4 +10,9 @@ class Level extends Model
     use HasFactory;
 
     protected $fillable = ['nivel'];
+
+    public function developers()
+    {
+        return $this->hasMany(Developer::class);
+    }
 }

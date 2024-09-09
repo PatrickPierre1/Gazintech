@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DevController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -11,13 +12,14 @@ Route::post('/login', [AuthController::class, 'login']);
 
 // Rotas para Levels 
 Route::get('/levels', [LevelController::class, 'index']);
-Route::post('/levels', [LevelController::class,'store']);
-Route::put('/levels/{id}', [LevelController::class,'update']);
-Route::delete('/levels/{id}', [LevelController::class,'destroy']);
+Route::post('/levels', [LevelController::class, 'store']);
+Route::put('/levels/{id}', [LevelController::class, 'update']);
+Route::delete('/levels/{id}', [LevelController::class, 'destroy']);
+
+
+// Rotas para Developers
+Route::post('/developers', [DevController::class, 'store']);
+Route::get('/developers', [DevController::class, 'index']);
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::get('/user', [UserController::class, 'index']);
-
-
-
-
